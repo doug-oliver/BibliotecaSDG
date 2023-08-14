@@ -1,0 +1,49 @@
+# Arquivos de configuração do ambiente
+*.env
+
+# Diretórios e arquivos gerados pelo Python e Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+
+# Arquivos de logs
+*.log
+
+# Diretórios e arquivos gerados pelo IDE/Editor
+.idea/
+.vscode/
+*.sublime*
+
+# Dependências e ambientes virtuais
+venv/
+env/
+env36/
+env37/
+env38/
+env39/
+.envrc
+
+# Arquivos e diretórios de coleta de estática
+staticfiles/*
+static/
+*.css
+*.js
+*.map
+*.svg
+*.woff
+*.woff2
+*.ttf
+
+# Diretório de mídia (uploads de usuário, etc.)
+media/
+
+# Arquivos temporários
+*.bak
+*.swp
+*.tmp
+
+# Arquivos de configuração de sistema
+.DS_Store
+Thumbs.db
