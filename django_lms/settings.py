@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 from dotenv import load_dotenv
+import sqlite3
 
 
 load_dotenv()
@@ -85,31 +86,32 @@ WSGI_APPLICATION = 'django_lms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'mydatabase.db',  # Especifique o nome e localização desejados
+    }
+}
+
+
+# SUPABASE_URL = "https://kkraqbacezhnixjdvurr.supabase.co"
+# SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtrcmFxYmFjZXpobml4amR2dXJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTExMDg5NDMsImV4cCI6MjAwNjY4NDk0M30.8FXOs_GIQ82gIdR0-lnV5wvUJqKcn6BL04JE1xrZeEU"
+
+# if os.environ.get('ENVIRONMENT') == "PRODUCTION":
+#     DATABASES = {
+#         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 #     }
-# }
-
-SUPABASE_URL = "https://kkraqbacezhnixjdvurr.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtrcmFxYmFjZXpobml4amR2dXJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTExMDg5NDMsImV4cCI6MjAwNjY4NDk0M30.8FXOs_GIQ82gIdR0-lnV5wvUJqKcn6BL04JE1xrZeEU"
-
-if os.environ.get('ENVIRONMENT') == "PRODUCTION":
-    DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': "postgres",
-            'USER': "postgres",
-            'PASSWORD': "ipconfig210290",
-            'HOST': "db.kkraqbacezhnixjdvurr.supabase.co",
-            'PORT': "5432",
-        }
-    }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': "postgres",
+#             'USER': "postgres",
+#             'PASSWORD': "ipconfig210290",
+#             'HOST': "db.kkraqbacezhnixjdvurr.supabase.co",
+#             'PORT': "5432",
+#         }
+#     }
 # DATABASES = {} # Prevent Django from loading an adapter
 
 # Password validation
