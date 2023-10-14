@@ -25,20 +25,6 @@ env38/
 env39/
 .envrc
 
-# Arquivos e diretórios de coleta de estática
-staticfiles/*
-static/
-*.css
-*.js
-*.map
-*.svg
-*.woff
-*.woff2
-*.ttf
-
-# Diretório de mídia (uploads de usuário, etc.)
-media/
-
 # Arquivos temporários
 *.bak
 *.swp
